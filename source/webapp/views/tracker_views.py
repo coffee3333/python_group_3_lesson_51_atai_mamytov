@@ -10,6 +10,9 @@ class IndexView(ListView):
     model = Tracker
     template_name = 'index.html'
     ordering = ['-created_at']
+    paginate_by = 5
+    paginate_orphans = 1
+
 
 class TaskTrackerView(TemplateView):
     template_name = 'TaskTrack.html'
