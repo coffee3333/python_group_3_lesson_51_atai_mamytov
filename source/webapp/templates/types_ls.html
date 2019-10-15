@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    <a href="{% url 'type_create' %}" class="btn btn-outline-light">Add Types</a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">Types list</h1>
+    <hr/>
+    {% for type in types %}
+        <div class="container">
+            <h4>Type: {{ type.type }} </h4>
+            <a href="{% url 'type_edit' type.pk %}" class="btn btn-outline-success">Edit</a>
+            <a href="{% url 'type_delete' type.pk %}" class="btn btn-outline-success">Delete</a>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

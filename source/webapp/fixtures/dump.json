@@ -1,0 +1,138 @@
+[
+{
+  "model": "webapp.tracker",
+  "pk": 1,
+  "fields": {
+    "summary": "Some task to do",
+    "description": "The description of this task (a lot of words)asdfsfdasd",
+    "status": 1,
+    "type": 1,
+    "created_at": "2019-10-06T17:07:35.875Z"
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 2,
+  "fields": {
+    "summary": "Start to do all my home works",
+    "description": "Because, I am a peace of sheet, that's why i didn't do my home work asdf",
+    "status": 2,
+    "type": 4,
+    "created_at": "2019-10-06T17:09:25.967Z"
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 3,
+  "fields": {
+    "summary": "Make research in my fucking life",
+    "description": "Need to do research in my f*cking life and start to do first home work",
+    "status": 3,
+    "type": 2,
+    "created_at": "2019-10-06T17:11:46.489Z"
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 4,
+  "fields": {
+    "summary": "Stop wasting my time",
+    "description": "To stop wasting my time for some sheet and start to do good thing",
+    "status": 4,
+    "type": 3,
+    "created_at": "2019-10-06T17:14:10.630Z"
+  }
+},
+{
+  "model": "webapp.tracker",
+  "pk": 5,
+  "fields": {
+    "summary": "To become a good programmer",
+    "description": "Need to fuck all of my group in programming, hope it's gonna be)",
+    "status": 2,
+    "type": 4,
+    "created_at": "2019-10-06T17:15:34.698Z"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "status": "new"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "status": "in_progress"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "status": "done"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 4,
+  "fields": {
+    "status": "pause"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "type": "task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "type": "bug"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "type": "enhancement"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 4,
+  "fields": {
+    "type": "research"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 5,
+  "fields": {
+    "type": "important"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$oLOJzSXxTLKL$dKdryFtGzMVN08ZYy3ytRT0Rc1l+xlrNqzmhXrm0e5Q=",
+    "last_login": "2019-10-06T16:54:45.193Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-10-06T16:38:26.374Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

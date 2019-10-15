@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    <a href="{% url 'task_track_add' %}" class="btn btn-outline-light">Add entry</a>
+    <a href="{% url 'type_ls' %}" class="btn btn-outline-light">Types list</a>
+    <a href="{% url 'status_ls' %}" class="btn btn-outline-light">Statuses list</a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">Tracker</h1>
+    <hr/>
+    <div class="row">
+        {% for tracker in trackers %}
+            <div class="col-lg-3 col-md-6 mb-3"">
+                <div class="card rounded-0">
+                    <div class="card-body">
+                        <h4>{{ tracker.summary }} </h4>
+                        <div class="container mb-5">{{ tracker.description }}</div>
+                        <div class="container">
+                            <a href="{% url 'task_track' tracker.pk %}" class="btn btn-outline-success  btn-block">More</a>
+                        </div>
+                        <div class="container">
+                            <a href="{% url 'task_track_edit' tracker.pk %}" class="btn btn-outline-success  btn-block">Edit</a>
+                        </div>
+                        <div class="container">
+                            <a href="{% url 'task_track_delete' tracker.pk %}" class="btn btn-outline-success  btn-block">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

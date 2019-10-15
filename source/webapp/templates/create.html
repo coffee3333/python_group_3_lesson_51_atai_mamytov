@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Task for Tracking{% endblock %}
+
+{% block content %}
+    <h1 class="mt-2">Add Task for Tracking</h1>
+    <form method="POST" action="{% url 'task_track_add' %}">
+        {% include 'partial/task_tracker_form.html' with button_text="Create" %}
+    </form>
+    <a href="{% url 'index' %}"class="btn btn-outline-success btn-block">Back</a>
+{% endblock %}

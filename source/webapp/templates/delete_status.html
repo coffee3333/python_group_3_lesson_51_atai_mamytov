@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Status{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="mt-5">Do you want to delete status: '{{ status.status }}' ?</h2>
+        <form method="POST" action="{% url 'status_delete' status.pk %}">
+            {% csrf_token %}
+            <p><input type="submit" value="Confirm" class="btn btn-outline-success btn-block"></p>
+            <p><a href="{% url 'status_ls' %}" class="btn btn-outline-success btn-block">Back</a></p>
+        </form>
+    </div>
+{% endblock %}

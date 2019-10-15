@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+    <a href="{% url 'status_create' %}" class="btn btn-outline-light">Add Status</a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-5">Statuses list</h1>
+    <hr/>
+    {% for status in statuses %}
+        <div class="container">
+            <h4>Status: {{ status.status }} </h4>
+            <a href="{% url 'status_edit' status.pk %}" class="btn btn-outline-success">Edit</a>
+            <a href="{% url 'status_delete' status.pk %}" class="btn btn-outline-success">Delete</a>
+        </div>
+        <hr>
+    {% endfor %}
+{% endblock %}

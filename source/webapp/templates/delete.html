@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Task Tracker{% endblock %}
+
+{% block menu %}
+    <a href="{% url 'task_track' task_tracker.pk %}" class="btn btn-outline-light">View</a>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="mt-5">Do you want to delete task: '{{ task_tracker.summary }}' ?</h2>
+        <form method="POST" action="{% url 'task_track_delete' task_tracker.pk %}">
+            {% csrf_token %}
+            <p><input type="submit" value="Confirm" class="btn btn-outline-success btn-block"></p>
+            <p><a href="{% url 'index' %}" class="btn btn-outline-success btn-block">Back</a></p>
+        </form>
+    </div>
+{% endblock %}
+
+
+

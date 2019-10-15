@@ -1,0 +1,31 @@
+body{
+font-family: 'Raleway', sans-serif;
+}
+.header{
+	background-color: #5bbc2e;
+	font-size: 13px;
+	font-weight: 600;
+}
+footer{
+	padding-top: 30px;
+	background-color: #141414;
+	height: 80px;
+}
+footer p{
+	color: #e0e0e0;
+	font-size: 12px;
+	font-weight: 600;
+}
+body .for_info {
+	margin-bottom: 250px;
+	margin-top: 30px;
+}
+.entertainment {
+    background-color: red;
+}
+.car {
+    background-color: blue;
+}
+.food {
+    background-color: green;
+}

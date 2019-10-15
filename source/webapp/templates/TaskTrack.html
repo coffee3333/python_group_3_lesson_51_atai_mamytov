@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ tracker.summary }}{% endblock %}
+
+{% block menu %}
+    <a href="{% url "task_track_edit" tracker.pk %}" class="btn btn-outline-light">Edit</a>
+    <a href="{% url "task_track_delete" tracker.pk %}" class="btn btn-outline-light">Delete</a>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-2">{{ tracker.summary }}</h1>
+    <p>Type: <b>{{ tracker.type }}</b> Status: <b>{{ tracker.status }}</b></p>
+    <div class="pre">{{ tracker.description }}</div>
+    <p>Created at: {{ tracker.created_at }}</p>
+    <a href="{% url 'index' %}"class="btn btn-outline-success btn-block">Back</a>
+{% endblock %}

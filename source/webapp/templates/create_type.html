@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Type{% endblock %}
+
+{% block content %}
+    <h1 class="mt-2">Add Type</h1>
+    <form method="POST" action="{% url 'type_create' %}">
+        {% include 'partial/task_tracker_form.html' with button_text="Create" %}
+    </form>
+    <a href="{% url 'index' %}"class="btn btn-outline-success btn-block">Back</a>
+{% endblock %}
