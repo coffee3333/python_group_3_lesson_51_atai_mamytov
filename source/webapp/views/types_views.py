@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView
 
 from webapp.models import Tracker, Type, Status
 from webapp.forms import TrackerForm, TypeForm, StatusForm
-from webapp.views.base_view import ListView
 
 class TypeView(ListView):
-    context_key = 'types'
+    context_object_name = 'types'
     model = Type
     template_name = 'types_ls.html'
 

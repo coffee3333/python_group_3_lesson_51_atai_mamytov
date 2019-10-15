@@ -1,15 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import View, TemplateView
+from django.views.generic import View, TemplateView, ListView
 
-from webapp.models import Tracker, Type, Status
-from webapp.forms import TrackerForm, TypeForm, StatusForm
-from webapp.views.base_view import ListView
+from webapp.models import Tracker
+from webapp.forms import TrackerForm
 
 
 class IndexView(ListView):
-    context_key = 'trackers'
+    context_object_name = 'trackers'
     model = Tracker
     template_name = 'index.html'
+    ordering = ['-created_at']
 
 class TaskTrackerView(TemplateView):
     template_name = 'TaskTrack.html'
