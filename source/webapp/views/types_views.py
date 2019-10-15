@@ -2,11 +2,12 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from webapp.models import Tracker, Type, Status
 from webapp.forms import TrackerForm, TypeForm, StatusForm
+from webapp.views.base_view import ListView
 
-
-def types_list(request, *args, **kwargs):
-    types = Type.objects.all()
-    return render(request, 'types_ls.html', context={'types': types})
+class TypeView(ListView):
+    context_key = 'types'
+    model = Type
+    template_name = 'types_ls.html'
 
 def types_create_view(request, *args, **kwargs):
     if request.method == 'GET':

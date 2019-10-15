@@ -2,12 +2,13 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from webapp.models import Tracker, Type, Status
 from webapp.forms import TrackerForm, TypeForm, StatusForm
+from webapp.views import ListView
 
 
-
-def status_list(request, *args, **kwargs):
-    statuses = Status.objects.all()
-    return render(request, 'status_ls.html', context={'statuses': statuses})
+class StatusView(ListView):
+    context_key = 'statuses'
+    model = Status
+    template_name = 'status_ls.html'
 
 
 def statuses_create_view(request, *args, **kwargs):

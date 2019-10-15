@@ -3,16 +3,13 @@ from django.views.generic import View, TemplateView
 
 from webapp.models import Tracker, Type, Status
 from webapp.forms import TrackerForm, TypeForm, StatusForm
+from webapp.views.base_view import ListView
 
 
-
-class IndexView(TemplateView):
+class IndexView(ListView):
+    context_key = 'trackers'
+    model = Tracker
     template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['trackers'] = Tracker.objects.all()
-        return context
 
 class TaskTrackerView(TemplateView):
     template_name = 'TaskTrack.html'
