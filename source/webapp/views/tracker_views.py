@@ -3,6 +3,7 @@ from django.views.generic import View, TemplateView, ListView
 
 from webapp.models import Tracker
 from webapp.forms import TrackerForm
+from webapp.views.detail_view import DetailView
 
 
 class IndexView(ListView):
@@ -13,15 +14,11 @@ class IndexView(ListView):
     paginate_by = 5
     paginate_orphans = 1
 
-
-class TaskTrackerView(TemplateView):
+class TaskTrackerView(DetailView):
     template_name = 'TaskTrack.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        task_track_pk = self.kwargs.get('pk')
-        context['tracker'] = get_object_or_404(Tracker, pk=task_track_pk)
-        return context
+    context_key = 'tracker'
+    model = Tracker
+    key_kwarg = 'pk'
 
 
 class TaskTrackerCraeteView(View):
